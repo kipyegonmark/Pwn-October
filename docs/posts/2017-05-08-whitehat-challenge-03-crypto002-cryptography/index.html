@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>WhiteHat Challenge 03 - Crypto002 - Cryptography - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">WhiteHat Challenge 03 - Crypto002 - Cryptography</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-05-08T13:05:22&#43;03:00">May 08, 2017</time></div></div>
+		</header><div class="content post__content clearfix">
+			<h2 id="whitehat-challenge-03---crypto001---cryptography">WhiteHat Challenge 03 - Crypto001 - Cryptography</h2>
+<h3 id="problem">Problem</h3>
+<p>We have components of an RSA cryptosystem. Decrypt the cipher to get the flag.</p>
+<p>RSA info:</p>
+<ul>
+<li><a href="https://vi.wikipedia.org/wiki/RSA_(m%C3%A3_h%C3%B3a)">https://vi.wikipedia.org/wiki/RSA_(m%C3%A3_h%C3%B3a)</a> Vietnamese</li>
+<li><a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">https://en.wikipedia.org/wiki/RSA_(cryptosystem)</a> English&quot;</li>
+</ul>
+<p>Download RSA-info file here:
+<a href="http://material.wargame.whitehat.vn/challenges/3/Crypto002_c576122a778397b48fa2d0368e2e02a14df1db41.zip">http://material.wargame.whitehat.vn/challenges/3/Crypto002_c576122a778397b48fa2d0368e2e02a14df1db41.zip</a>
+Submit WhiteHat{sha1(flag)}
+Example: flag = Hello World
+sha1(&ldquo;Hello World&rdquo;) = 0a4d55a8d778e5022fab701977c5d840bbc486d0
+You must submit: WhiteHat{0a4d55a8d778e5022fab701977c5d840bbc486d0}
+(all hash charactera in lowercase)</p>
+<h3 id="solution">Solution</h3>
+<p>For this solution I borrowed a snippet of code from <a href="https://github.com/Ne0Lux-C1Ph3r/WRITE-UP/blob/master/EasyCTF/Cryptography/RSA_3.md">Ne0Lux-C1Ph3r</a></p>
+<p>``#!/usr/bin/env python
+import libnum</p>
+<p>e = 65537
+c = 126028558760741438230925566962334702896791270808414391828894437291120207835997354509410869568173448979784329516392078311028442458946906210498176026685581176779209904039179175088984829699783861789249260322822491502790157863487861171337660785254139478229397872969136220001367017765809130698515063339265165085655</p>
+<p>p = 12476682960795779723419989287306239606331347310604553825605263028855086418051086300006278888049896375754096827163121306696417314531666670662341673511789487
+q = 10626608485185909739187126602183513204215955466032868268570782358820047751795982373252873333276843831383542360202874683262678664975380865415068554992090483</p>
+<p>n=p<em>q
+phi=(p-1)</em>(q-1)
+d = libnum.modular.invmod(e, phi)
+print libnum.n2s(pow(c, d, n))``</p>
+<p>When executed this returns the plain text string <em><strong>simple_rsa_decryption</strong></em>.</p>
+<p><code>$ echo -n simple_rsa_decryption | shasum</code></p>
+<p>FLAG: <strong>WhiteHat{100be37579e0f27c314efcb68a773b31537b5118}</strong></p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2017-05-08-whitehat-challenge-03-crypto001-cryptography/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">WhiteHat Challenge 03 - Crypto001 - Cryptography</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2017-05-08-whitehat-challenge-03-for001-forensics/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">2017 05 08 Whitehat Challenge 03 For001 Forensics</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HTTP Strict Transport Security on Apache Web Server - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">HTTP Strict Transport Security on Apache Web Server</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-07-11T13:21:22&#43;03:00">July 11, 2016</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>In this exercise, the objective is to enforce HTTP Strict Transport Security (HSTS) on an Apache web server. This is an update to the SSL/ TLS certificate deployment as documented <a href="#">here</a>.</p>
+<p>From Wikipedia, <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HSTS</a> <em>&lsquo;allows web servers to declare that web browsers (or other complying user agents) should only interact with it using secure HTTPS connections, and never via the insecure HTTP protocol&rsquo;</em>.</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>The Apache <a href="https://httpd.apache.org/docs/current/mod/mod_headers.html">mod_headers</a> extension must be enabled.</li>
+<li>All HTTP trafic on the web server must be redirected to HTTPS.</li>
+<li>All subdomains must be served over HTTPS. This includes the <em>www</em> subdomain.</li>
+<li>The web server must continuously be accessible through HTTPS.
+Failure to meet this requirement could break access to the website for an extended period of time.</li>
+</ul>
+<h3 id="deployment">Deployment</h3>
+<p>In the SSL/ TLS configuration file, the following segment should be amended. In Apache, this is located by default at <strong>/etc/httpd/conf.d/ssl.conf</strong>.</p>
+<pre><code># HSTS (mod_headers is required) (15768000 seconds = 6 months)
+Header always set Strict-Transport-Security &quot;max-age=15768000&quot;
+</code></pre><p>After restarting Apache, the website should be ready for submission to the Chrome <a href="https://hstspreload.appspot.com/">HSTS preload list</a>. This list is supported by most <a href="http://caniuse.com/#feat=stricttransportsecurity">major browsers</a>.</p>
+<p>At the time of posting, this <a href="#">site</a> contains no errors and is pending submission to the list.</p>
+<h4 id="update">Update</h4>
+<p>As of 25th August 2016, this site is included in Chrome&rsquo;s HSTS preload list. In practice no modern browser should permit an insecure HTTP connection to the website.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">Mozilla SSL Configuration Generator</a></li>
+<li><a href="https://hstspreload.appspot.com/">Chrome HSTS preload list</a></li>
+</ul>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2016-07-04-deploying-lightweight-directory-services-using-openldap/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Deploying Lightweight Directory Services using OpenLDAP</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2016-08-22-public-key-pinning-extension-for-http-hpkp-on-apache-web-server/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Public Key Pinning Extension for HTTP (HPKP) on Apache Web Server</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

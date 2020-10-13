@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Active Directory Deployment using Samba - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Active Directory Deployment using Samba</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-06-19T20:39:10&#43;03:00">June 19, 2016</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>Active Directory (AD) is a Microsoft technology that provides services within a Windows domain environment.</p>
+<p>In this exercise we will use <a href="https://www.samba.org/">Samba4</a>, a <a href="https://www.gnu.org/philosophy/free-sw.html">free software</a> implementation to deploy AD services from a CentOS 7 server.</p>
+<p>The AD services to be deployed are:</p>
+<ul>
+<li>[Domain Services](<a href="https://technet.microsoft.com/en-us/library/cc770946(v=ws.10">https://technet.microsoft.com/en-us/library/cc770946(v=ws.10</a>).aspx)</li>
+<li><a href="https://technet.microsoft.com/en-us/library/cc770357">Certificate Services</a></li>
+<li><a href="https://technet.microsoft.com/en-us/library/cc771234">Rights Management Services</a></li>
+<li><a href="https://technet.microsoft.com/en-us/library/cc731868">Lightweight Directory Services</a></li>
+</ul>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>
+<p>DNS resolution is a critical function for domain controllers and domain joined computers. To minimise the risk of authentication failures or inaccessible resources, it is good practice to use either a static IP address or deploy DHCP reservation.</p>
+</li>
+<li>
+<p>This deployment requires installation of Samba from source, linked <a href="https://wiki.samba.org/index.php/Build_Samba_from_source">here</a>.
+Samba4 requires <a href="http://www.h5l.org/">Heimdal Kerberos</a> implementation to deploy AD services. This implementation conflicts with the system supplied MIT Kerberos that ships with CentOS and RHEL.</p>
+</li>
+<li>
+<p>This setup assumes a new domain setup.</p>
+</li>
+</ul>
+<h3 id="ad-provisioning">AD Provisioning</h3>
+<p>After successful installation, we are first required to provision a new domain. Provisioning creates an AD database and is similar in function to <strong>dcpromo.exe</strong> in pre 2012 versions of Windows Server.</p>
+<p>From terminal, we execute the following.</p>
+<p><code>$ samba-tool domain provision --use-rfc2307 --interactive</code></p>
+<p>A sample configuration is as shown.</p>
+<pre><code>Realm: CONTOSO.COM
+Domain: CONTOSO
+Server Role: dc
+DNS backend: SAMBA_INTERNAL
+Administrator password: P3ssw0rd_
+</code></pre><p>Do note that the administrator password must meet password complexity requirements for Microsoft domain and local user accounts. The full set of requirements can be found <a href="https://technet.microsoft.com/en-us/library/cc786468%28v=ws.10%29.aspx">here</a>.</p>
+<p>We can then start the Samba AD domain controller.</p>
+<p><code>$ samba4</code></p>
+<p>If initial configuration was successful, we can attempt to connect to the default <strong>netlogon</strong> share using the credentials created during provisioning.</p>
+<h3 id="kerberos">Kerberos</h3>
+<p>The Kerberos protocol enables secure network authentication of clients and servers. A working configuration of Kerberos is created during the provisioning phase.</p>
+<p>To verify that Kerberos is working, the <strong>kinit</strong> utility can be used to obtain a ticket.</p>
+<pre><code>$ kinit administrator@CONTOSO.COM
+$ Password for administrator@CONTOSO.COM: P3ssw0rd_
+</code></pre><ul>
+<li>The realm must always be specified in uppercase!</li>
+</ul>
+<p>We then run <strong>klist</strong> to verify that Kerberos is working and has issued a ticket.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In a future post, we will deploy LDAP and a certificate authority in the context of AD services.</p>
+<ul>
+<li>Updated to include information on Kerberos.</li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li>RHEL <a href="https://access.redhat.com/sites/default/files/attachments/rhel-ad-integration-deployment-guidelines-v1.5.pdf">Active Directory Integration Deployment Guidelines</a></li>
+</ul>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2016-01-19-ssl-tls-certificate-deployment/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">SSL/ TLS Certificate Deployment</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2016-07-04-deploying-lightweight-directory-services-using-openldap/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Deploying Lightweight Directory Services using OpenLDAP</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

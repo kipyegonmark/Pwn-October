@@ -1,0 +1,36 @@
+baseURL = "https://pwn.october.co.ke/"
+languageCode = "en-us"
+title = "Pwn October: A Technology Blog"
+theme = "Mainroad"
+Paginate = "7"
+publishDir = "docs"
+
+[Author]
+    name = "Mark Koskei"
+    
+[Params]
+    description = "A blog on technology, information security and Pwn October CTF team."
+    authorbox = true
+    readmore = true
+    pager = true
+    post_meta = ["author", "date", "categories"]
+    #mainSections = ["blog", "about"]
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "left"  # Configure layout for list pages
+  single = false # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["ddg-search", "recent", "categories", "taglist", "social"]
+  # alternatively "ddg-search" can be used, to search via DuckDuckGo
+  # widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets]
+  recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  tags_counter = true # Enable counter for each tag in "Tags" widget
+
+[Params.widgets.social]
+  # Enable parts of social widget
+  twitter = "kapkole"
+  telegram = "LeonPwnski"
+  github = "kipyegonmark"

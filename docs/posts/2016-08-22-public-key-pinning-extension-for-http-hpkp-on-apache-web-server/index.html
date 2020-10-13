@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Public Key Pinning Extension for HTTP (HPKP) on Apache Web Server - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Public Key Pinning Extension for HTTP (HPKP) on Apache Web Server</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-08-22T09:00:25&#43;03:00">August 22, 2016</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p><strong>HPKP support has been dropped by all major browsers. The feature was complex to implement and had the potential to break website access.</strong></p>
+<p><em>HPKP</em> as defined in RFC7469, <a href="https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning">&lsquo;tells a web client to associate a specific cryptographic public key with a certain web server&rsquo;</a>.</p>
+<p>Used in combination with <a href="#">HTTP Strict Transport Security</a>, HPKP can be a strong defense against man in the middle (MITM) attacks by enforcing certificate chain validation.</p>
+<p>In this event, the threat agent is a rogue or a compromised certificate authority such as Diginotar&rsquo;s <a href="https://blog.mozilla.org/security/2011/08/29/fraudulent-google-com-certificate/">fraudulent issuance of google.com certificates</a>.</p>
+<h3 id="weaknesses">Weaknesses</h3>
+<p>HPKP relies in <em>trust on first use</em>. On initial connection, the web client cannot validate the certificate chain . This means <a href="https://en.wikipedia.org/wiki/Alice_and_Bob">Eve</a> can potentially intercept the initial connection and perform an MITM.</p>
+<p>Major websites (such as <a href="https://cs.chromium.org/chromium/src/net/http/transport_security_state_static.json?l=49">Google</a> and <a href="https://cs.chromium.org/chromium/src/net/http/transport_security_state_static.json?l=170">Facebook</a>) have pre-shared keys hardcoded into Chrome and Firefox as a mitigation. However this is not a practical solution for the rest of the Internet. In practice, future connection requests to the valid web host should then return an error to the client.</p>
+<p>As of August 2016, <a href="http://caniuse.com/#search=HPKP">browser support</a> for HPKP is limited to Firefox, Chromium and Opera.</p>
+<h3 id="deployment">Deployment</h3>
+<h4 id="caution">Caution</h4>
+<p>If incorrectly configured, HPKP can cause a website to become inaccessible. For testing the <strong>Public-Key-Pins-Report-Only</strong> directive can be used or alternatively the website owner can set a low value for <strong>max-age</strong>.</p>
+<h3 id="policy-configuration">Policy Configuration</h3>
+<p>The standards document requires at least two pins to enforce HPKP. It is at the website owner&rsquo;s discretion on which pins are appropriate for deployment.</p>
+<p>For this exercise I elected to rely on Github&rsquo;s <a href="https://report-uri.io/home/pkp_analyse/https%3A%2F%2Fgithub.com">HPKP policy</a>. The reasoning here is that <a href="http://github.com/">Github</a> is one of the largest websites that supports HPKP and their setup seems robust enough for production use.</p>
+<p>The directives as used in the above policy are described here:</p>
+<p><strong>pin-sha=&quot;&hellip;&quot;</strong></p>
+<p>This is a base64 string that corresponds to the pin for a public key. I intend to pin two root keys, one intermediate key and two offline backup keys.</p>
+<h4 id="key-generation">Key Generation</h4>
+<p>For the root keys, I selected (Identrust) DST Root CA X3 root certificate and the newer ISRG Root X1 by Let&rsquo;s Encrypt and for the intermediate certificate I chose Let&rsquo;s Encrypt Authority X3.</p>
+<p>DST Root CA X3 root certificate is sourced from <a href="https://www.identrust.com/certificates/trustid/install-nes36.html">here</a> and the Let&rsquo;s Encrypt certificate keys are available <a href="https://letsencrypt.org/certificates/">here</a>.</p>
+<p>Using the retrieved information, the next step is to generate the base64 encoded hashes as shown below:</p>
+<pre><code>$ openssl x509 -in certificate.pem -pubkey -noout | openssl pkey -pubin 
+-outform der | openssl dgst -sha256 -binary | openssl enc -base64
+
+$ curl https://letsencrypt.org/certs/isrgrootx1.pem | openssl x509 -pubkey | openssl pkey 
+-pubin -outform der | openssl dgst -sha256 -binary | base64
+
+$ curl https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem | openssl x509 
+-pubkey | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | 
+base64
+</code></pre><p>The two offline keys are generated and stored offline as backup keys in the event the Let&rsquo;s Encrypt CA becomes unavailable.</p>
+<p>Generation of the private key and the required base64 hash is shown below.</p>
+<p>Replace foo.com with a name of your choice.</p>
+<pre><code>$ openssl req -nodes -sha256 -newkey rsa:4096 -keyout 'foo.com.rsa.key' -out 'foo.com.rsa.csr'
+
+$ openssl req -pubkey &lt; foo.com.csr | openssl pkey -pubin -outform der | openssl dgst 
+-sha256 -binary | base64
+</code></pre><p><strong>max-age=5184000</strong></p>
+<p>This value in seconds is equivalent to two months. A shorter duration offers less protection to users while a higher duration presents a risk where pin validation might fail.</p>
+<ul>
+<li>For testing remember to use a smaller value such as 60. A mistake could potentially break access to a domain.</li>
+</ul>
+<p><strong>includeSubDomains</strong></p>
+<p>This optional directive is self-descriptive and is used to apply the HPKP policy to all subdomains.</p>
+<p><strong>report-uri</strong></p>
+<p>This is an optional directive through which pin validation failures are to be reported. The value should obviously be to a different domain.</p>
+<p>A real time reporting tool is included with report-uri.io for reporting pin validation errors.</p>
+<p>Using the directives described above, the result is should be similar to the snippet below.</p>
+<pre><code>Header set Public-Key-Pins 
+&quot;pin-sha256=\&quot;Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=&quot;; 
+pin-sha256=\&quot;YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\&quot;; 
+pin-sha256=\&quot;47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\&quot;; 
+pin-sha256=\&quot;BnCc92LNTmq+v0mGoN13pbuR/d8WcOBYtZCCMBKwrmo=\&quot;; 
+pin-sha256=\&quot;MBCWEpJFZIJKp3Tjy4WTIL2AcL91yV4Zo2PfsHyiaVQ=\&quot;; 
+report-uri=\&quot;https://55343e1861289e8df8aa157da3c58796.report-uri.io/r/default/hpkp/enforce\&quot;; 
+max-age=5184000; 
+includeSubdomains;&quot;
+</code></pre><p>In Apache, the snippet is to be added to virtual hosts located by default in <strong>/etc/httpd/conf.d/ssl.conf</strong>. Restarting the web server should now enforce public key pinning.</p>
+<h3 id="testing">Testing</h3>
+<p>Using Firefox, one can verify that HPKP is enabled using the network tool bundled with &lsquo;Web developer&rsquo; Tools.</p>
+<p>Alternatively online tools by report-uri.io found <a href="https://report-uri.io/home/pkp_analyse">here</a> or a complete report using Qualys <a href="https://www.ssllabs.com/ssltest/analyze.html">SSL Server Test</a> can be used to test a domain.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>At the date of posting, this website has successfully deployed HTTP Public Key Pinning.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://tools.ietf.org/html/rfc7469">RFC7469</a></li>
+<li><a href="report-uri.io">report-uri.io</a> - A great utility that offers tools to configure and deploy a HPKP policy</li>
+<li>Mozilla Developer Network article on <a href="https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning">Public Key Pinning</a></li>
+<li>Github&rsquo;s <a href="https://report-uri.io/home/pkp_analyse/https%3A%2F%2Fgithub.com">HPKP policy</a></li>
+<li><a href="https://raymii.org/s/articles/HTTP_Public_Key_Pinning_Extension_HPKP.html#Apache">HTTP Public Key Pinning Extension HPKP for Apache, NGINX and Lighttpd</a></li>
+<li>Scott Helme&rsquo;s post on <a href="https://scotthelme.co.uk/hpkp-http-public-key-pinning/">HPKP</a></li>
+<li><a href="https://ithenrik.com/blog/posts/activating-http-public-key-pinning-hpkp-on-lets-encrypt">Activating HTTP Public Key Pinning (HPKP) on Let&rsquo;s Encrypt</a></li>
+</ul>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2016-07-11-http-strict-transport-security-on-apache-web-server/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">HTTP Strict Transport Security on Apache Web Server</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2016-09-13-asis-ctf-finals-2016-ctf-101/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">ASIS CTF Finals 2016 - CTF 101</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pwn October: A Technology Blog</title>
+    <link>https://pwn.october.co.ke/</link>
+    <description>Recent content on Pwn October: A Technology Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Sep 2017 03:58:20 +0300</lastBuildDate><atom:link href="https://pwn.october.co.ke/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About me</title>
+      <link>https://pwn.october.co.ke/about_me/</link>
+      <pubDate>Thu, 08 Oct 2020 10:36:30 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/about_me/</guid>
+      <description>I wish to use this space to journal my experiences in learning and using computer technology.
+I have previous experience in software development and systems administration. In addition I have a passion for open source software and information security.</description>
+    </item>
+    
+    <item>
+      <title>Codefest CTF 2017 - RoleReversal - Steganography</title>
+      <link>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-rolereversal-steganography/</link>
+      <pubDate>Mon, 25 Sep 2017 03:58:20 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-rolereversal-steganography/</guid>
+      <description>Ms. Airwrecka is carrying out research on how to hide her &lt;em&gt;cough&lt;/em&gt; questionable &lt;em&gt;cough&lt;/em&gt; things.</description>
+    </item>
+    
+    <item>
+      <title>Codefest CTF 2017 - SimplyBlack - Steganography</title>
+      <link>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-simplyblack-steganography/</link>
+      <pubDate>Mon, 25 Sep 2017 03:57:58 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-simplyblack-steganography/</guid>
+      <description>Black is not the only black. There are 50 shades of grey.</description>
+    </item>
+    
+    <item>
+      <title>Codefest CTF 2017 - Digging Deeper - Steganography</title>
+      <link>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-digging-deeper-steganography/</link>
+      <pubDate>Mon, 25 Sep 2017 03:57:05 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-digging-deeper-steganography/</guid>
+      <description>Jaime is digging Cersie&amp;rsquo;s grave because he hates her, and he needs to go DEEEP.</description>
+    </item>
+    
+    <item>
+      <title>STEM CTF: Cyber Challenge 2017 - Trust Issues - Web - 50 points</title>
+      <link>https://pwn.october.co.ke/posts/2017-09-17-stem-ctf-cyber-challenge-2017-trust-issues-web-50-points/</link>
+      <pubDate>Sun, 17 Sep 2017 10:37:54 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-09-17-stem-ctf-cyber-challenge-2017-trust-issues-web-50-points/</guid>
+      <description>I&amp;rsquo;d like to file a complaint about your website</description>
+    </item>
+    
+    <item>
+      <title>HITB CTF - Simple Transfer - Misc</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-25-hitb-ctf-simple-transfer-misc/</link>
+      <pubDate>Fri, 25 Aug 2017 10:56:28 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-25-hitb-ctf-simple-transfer-misc/</guid>
+      <description>The file contains a flag, find it.</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Substitute Teacher - Cryptography</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-substitute-teacher-cryptography/</link>
+      <pubDate>Tue, 08 Aug 2017 11:18:15 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-substitute-teacher-cryptography/</guid>
+      <description>Hello, my name is Mr. Smith, I will be your substitute teacher for today. I only have one assignment for you today, if you solve it you may go home.</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Rotation - Cryptography</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-rotation-cryptography/</link>
+      <pubDate>Tue, 08 Aug 2017 11:12:01 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-rotation-cryptography/</guid>
+      <description>Seems someone rotated the alphabet, can you get the original message back?</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Transposition - Cryptography</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-transposition-cryptography/</link>
+      <pubDate>Tue, 08 Aug 2017 11:06:59 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-transposition-cryptography/</guid>
+      <description>We intercepted this secret message. We believe it is using a transposition cipher. Can you decipher it?</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Location  - Web</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-location-web/</link>
+      <pubDate>Tue, 08 Aug 2017 11:04:07 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-location-web/</guid>
+      <description>Like in real estate, the web is all about location, location and location.</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Deleted File  - Forensics</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-deleted-file-forensics/</link>
+      <pubDate>Tue, 08 Aug 2017 10:57:59 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-deleted-file-forensics/</guid>
+      <description>There is a flag hidden in this binary. Can you find it?</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Captured Mail  - Pcap</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-captured-mail-pcap/</link>
+      <pubDate>Tue, 08 Aug 2017 10:55:03 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-captured-mail-pcap/</guid>
+      <description>We intercepted this mail message. Can you open the attachment?</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Hidden Message - Binary</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-hidden-message-binary/</link>
+      <pubDate>Tue, 08 Aug 2017 10:50:31 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-hidden-message-binary/</guid>
+      <description>This file contains a hidden message. Can you reverse engineer it and find it?</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Weird Website - Pcap</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-weird-website-pcap/</link>
+      <pubDate>Tue, 08 Aug 2017 10:45:31 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-weird-website-pcap/</guid>
+      <description>We captured some traffic while visiting this website. Can you get some information from it?</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Zipfile Two - Misc</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-zipfile-two-misc/</link>
+      <pubDate>Tue, 08 Aug 2017 10:39:16 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-zipfile-two-misc/</guid>
+      <description>We received another zip file, which also requires a password</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Zipfile One - Misc</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-zipfile-one-misc/</link>
+      <pubDate>Tue, 08 Aug 2017 10:31:56 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-zipfile-one-misc/</guid>
+      <description>We received this zip file, but is asking for a password.</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Broken Image - Web</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-broken-image-web/</link>
+      <pubDate>Tue, 08 Aug 2017 10:29:08 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-broken-image-web/</guid>
+      <description>Seems we have a broken image on our website</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Old School - Web</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-old-school-web/</link>
+      <pubDate>Tue, 08 Aug 2017 10:15:45 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-old-school-web/</guid>
+      <description>We found this Old School Website.</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Wanna Buy A Flag? - Pcap</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-wanna-buy-a-flag-pcap/</link>
+      <pubDate>Tue, 08 Aug 2017 10:12:44 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-wanna-buy-a-flag-pcap/</guid>
+      <description>Analyse this Network capture to get the flag.</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - Find The Flag - Binary</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-find-the-flag-binary/</link>
+      <pubDate>Tue, 08 Aug 2017 10:05:45 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-find-the-flag-binary/</guid>
+      <description>There is a flag hidden in this binary. Can you find it?</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - All about the Base - Crypto</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-all-about-the-base-crypto/</link>
+      <pubDate>Tue, 08 Aug 2017 09:43:16 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-all-about-the-base-crypto/</guid>
+      <description>We found this encoded message. Can you decode it?</description>
+    </item>
+    
+    <item>
+      <title>SHA2017 - Junior CTF - In Your Head - Web</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-in-your-head-web/</link>
+      <pubDate>Tue, 08 Aug 2017 09:43:16 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-in-your-head-web/</guid>
+      <description>Sometimes you have just to listen to your head.</description>
+    </item>
+    
+    <item>
+      <title>Bugs Bunny CTF - Web-5 - Nothing here</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-web-5-nothing-here/</link>
+      <pubDate>Tue, 01 Aug 2017 10:11:04 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-web-5-nothing-here/</guid>
+      <description>Nothing here !</description>
+    </item>
+    
+    <item>
+      <title>Bugs Bunny CTF - Crypto-45 - Scy way</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-crypto-45-scy-way/</link>
+      <pubDate>Tue, 01 Aug 2017 10:10:51 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-crypto-45-scy-way/</guid>
+      <description>Decrypt My Secret And Win!</description>
+    </item>
+    
+    <item>
+      <title>Bugs Bunny CTF - Crypto-15</title>
+      <link>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-crypto-15/</link>
+      <pubDate>Tue, 01 Aug 2017 10:10:37 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-crypto-15/</guid>
+      <description>Some classics crypto task ! Cesar maybe !!</description>
+    </item>
+    
+    <item>
+      <title>WhiteHat Challenge 03 - Web001 - Web</title>
+      <link>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-web001-web/</link>
+      <pubDate>Mon, 08 May 2017 13:23:10 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-web001-web/</guid>
+      <description>Sign in and get the flag in the following site.</description>
+    </item>
+    
+    <item>
+      <title>WhiteHat Challenge 03 - For002 - Forensics</title>
+      <link>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-for002-forensics/</link>
+      <pubDate>Mon, 08 May 2017 13:16:56 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-for002-forensics/</guid>
+      <description>We have eavesdropped a piece of network data when a user signed in a website. Find the flag as his password.</description>
+    </item>
+    
+    <item>
+      <title>2017 05 08 Whitehat Challenge 03 For001 Forensics</title>
+      <link>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-for001-forensics/</link>
+      <pubDate>Mon, 08 May 2017 13:11:40 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-for001-forensics/</guid>
+      <description>This piece of data is captured via USB port, look for the flag  transferred through it.</description>
+    </item>
+    
+    <item>
+      <title>WhiteHat Challenge 03 - Crypto002 - Cryptography</title>
+      <link>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-crypto002-cryptography/</link>
+      <pubDate>Mon, 08 May 2017 13:05:22 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-crypto002-cryptography/</guid>
+      <description>We have components of an RSA cryptosystem. Decrypt the cipher to get the flag</description>
+    </item>
+    
+    <item>
+      <title>WhiteHat Challenge 03 - Crypto001 - Cryptography</title>
+      <link>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-crypto001-cryptography/</link>
+      <pubDate>Mon, 08 May 2017 12:46:43 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-crypto001-cryptography/</guid>
+      <description>I happen to get this text, but it seems to be encrypted. Decrypt it and find the hidden flag.</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Lectures? - Forensic</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-lectures-forensic/</link>
+      <pubDate>Tue, 25 Apr 2017 08:59:31 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-lectures-forensic/</guid>
+      <description>I tried to log in lectures.yasar.edu.tr but I forgot my id.. But I have this file I think it has my id in it. Can you help me?</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - File - Forensic</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-file-forensic/</link>
+      <pubDate>Tue, 25 Apr 2017 08:52:19 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-file-forensic/</guid>
+      <description>What is this file ? Can you find hidden flag ?</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - *blushes* - Steganography</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-star-blushes-star-steganography/</link>
+      <pubDate>Tue, 25 Apr 2017 08:48:44 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-star-blushes-star-steganography/</guid>
+      <description>indir.png</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Mobile Number - OSINT</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-mobile-number-osint/</link>
+      <pubDate>Tue, 25 Apr 2017 08:41:37 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-mobile-number-osint/</guid>
+      <description>Who took this photo ? Can you find photographer&amp;rsquo;s mobile number ? Show me, How stalker are you!</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Location - OSINT</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-location-osint/</link>
+      <pubDate>Tue, 25 Apr 2017 08:32:55 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-location-osint/</guid>
+      <description>Can you find location ? We are looking for city name ?</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Social Media - OSINT</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-social-media-osint/</link>
+      <pubDate>Tue, 25 Apr 2017 08:28:56 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-social-media-osint/</guid>
+      <description>@yubitsec</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Great Leader - Misc</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-great-leader-misc/</link>
+      <pubDate>Tue, 25 Apr 2017 08:22:36 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-great-leader-misc/</guid>
+      <description>http://138.197.41.168/ctf2/ataturk.html</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Strings - Misc</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-strings-misc/</link>
+      <pubDate>Tue, 25 Apr 2017 08:18:24 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-strings-misc/</guid>
+      <description>Easy Peasy</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Rome - Warmup</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-rome-warmup/</link>
+      <pubDate>Tue, 25 Apr 2017 08:13:01 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-rome-warmup/</guid>
+      <description>PLSZKJVT{TRVJRI_WFLEU_KYZJ_RTKLRCCP}</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - A Fine Cipher - Warmup</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-a-fine-cipher-warmup/</link>
+      <pubDate>Tue, 25 Apr 2017 08:07:41 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-a-fine-cipher-warmup/</guid>
+      <description>VLWHCTXF{N_GHAX_FHSYXK}</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Bash - Warmup</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-bash-warmup/</link>
+      <pubDate>Tue, 25 Apr 2017 08:00:10 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-bash-warmup/</guid>
+      <description>BFYRGHVX{ZGYZHS_MLG_DVOXLNV_SVIV}</description>
+    </item>
+    
+    <item>
+      <title>YubitSec CTF - Gifted - RE</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-gifted-re/</link>
+      <pubDate>Tue, 25 Apr 2017 07:33:38 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-gifted-re/</guid>
+      <description>Gifted</description>
+    </item>
+    
+    <item>
+      <title>INS&#39;HACK - Easy HTML - WEB 25</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-10-inshack-easy-html-web-25/</link>
+      <pubDate>Mon, 10 Apr 2017 07:39:40 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-10-inshack-easy-html-web-25/</guid>
+      <description>You go at your friend house. He shows you what kind of wonderful and beautiful set-up - to control his house - he has. Of course, the control panel is protected.</description>
+    </item>
+    
+    <item>
+      <title>Title: Sunshine CTF - Easy 2</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-10-sunshine-ctf-easy-2/</link>
+      <pubDate>Mon, 10 Apr 2017 07:34:38 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-10-sunshine-ctf-easy-2/</guid>
+      <description>Plan ahead. Heighten your situational awareness. Dress in clothes that are common to the area where you are, or where you plan to go.</description>
+    </item>
+    
+    <item>
+      <title>Sunshine CTF - Easy 1</title>
+      <link>https://pwn.october.co.ke/posts/2017-04-10-sunshine-ctf-easy-1/</link>
+      <pubDate>Mon, 10 Apr 2017 07:29:25 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-04-10-sunshine-ctf-easy-1/</guid>
+      <description>Doom is upon us. We are surrounded by enemies on all sides. There is only one hope. Use your hacking skills to find it.</description>
+    </item>
+    
+    <item>
+      <title>Pragyan CTF - Interstellar</title>
+      <link>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-interstellar/</link>
+      <pubDate>Mon, 06 Mar 2017 00:10:26 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-interstellar/</guid>
+      <description>Dr. Cooper, on another one of his endless journeys encounter a mysterious planet. However when he tried to land on it, the ship gave way and he was left stranded on the planet.</description>
+    </item>
+    
+    <item>
+      <title>Pragyan CTF - Look Harder</title>
+      <link>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-look-harder/</link>
+      <pubDate>Mon, 06 Mar 2017 00:00:26 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-look-harder/</guid>
+      <description>There are rumours that in the Great Sahara Desert, a great treasure has been buried deep inside the ground, but the map for the exact location of the treasure over the years, has not been preserved properly.</description>
+    </item>
+    
+    <item>
+      <title>BSIDESSF CTF: Easy</title>
+      <link>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easy/</link>
+      <pubDate>Tue, 14 Feb 2017 18:23:25 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easy/</guid>
+      <description>This one is easy.</description>
+    </item>
+    
+    <item>
+      <title>BSIDESSF CTF: easyauth</title>
+      <link>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easyauth/</link>
+      <pubDate>Tue, 14 Feb 2017 18:13:17 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easyauth/</guid>
+      <description>Can you gain admin access to this site?</description>
+    </item>
+    
+    <item>
+      <title>BSIDESSF CTF: easycap</title>
+      <link>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easycap/</link>
+      <pubDate>Tue, 14 Feb 2017 18:04:00 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easycap/</guid>
+      <description>Can you get the flag from the packet capture?</description>
+    </item>
+    
+    <item>
+      <title>BSIDESSF CTF: Zumbo 1</title>
+      <link>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-zumbo-1/</link>
+      <pubDate>Tue, 14 Feb 2017 17:53:26 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-zumbo-1/</guid>
+      <description>Welcome to ZUMBOCOM&amp;hellip;.you can do anything at ZUMBOCOM. Three flags await. Can you find them?</description>
+    </item>
+    
+    <item>
+      <title>ALEX CTF SC2: Cutie cat</title>
+      <link>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-sc2-cutie-cat/</link>
+      <pubDate>Mon, 06 Feb 2017 13:26:21 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-sc2-cutie-cat/</guid>
+      <description>yeah steganography challenges are the worst&amp;hellip; that&amp;rsquo;s why we got only ~~one ~~ two steganography challenges</description>
+    </item>
+    
+    <item>
+      <title>ALEX CTF RE1: Gifted</title>
+      <link>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-re1-gifted/</link>
+      <pubDate>Mon, 06 Feb 2017 13:21:40 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-re1-gifted/</guid>
+      <description>In this challenge, we were given a link to a binary file.</description>
+    </item>
+    
+    <item>
+      <title>ALEX CTF Trivia Challenges</title>
+      <link>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-trivia-challenges/</link>
+      <pubDate>Mon, 06 Feb 2017 12:55:50 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-trivia-challenges/</guid>
+      <description>It lead to memory leakage between servers and clients rending large number of private keys accessible. (one word)</description>
+    </item>
+    
+    <item>
+      <title>7th Sharif University Capture The Flag - Web 1</title>
+      <link>https://pwn.october.co.ke/posts/2016-12-19-7th-sharif-university-capture-the-flag-web-1/</link>
+      <pubDate>Mon, 19 Dec 2016 10:06:38 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-12-19-7th-sharif-university-capture-the-flag-web-1/</guid>
+      <description>Flag = SharifCTF{md5(underlined phrase in the &lt;a href=&#34;http://ctf.sharif.edu/ctf7/rules&#34;&gt;rules page&lt;/a&gt;)}.</description>
+    </item>
+    
+    <item>
+      <title>ASIS CTF Finals 2016 - CTF 101</title>
+      <link>https://pwn.october.co.ke/posts/2016-09-13-asis-ctf-finals-2016-ctf-101/</link>
+      <pubDate>Tue, 13 Sep 2016 11:43:54 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-09-13-asis-ctf-finals-2016-ctf-101/</guid>
+      <description>Watch your heads!</description>
+    </item>
+    
+    <item>
+      <title>Public Key Pinning Extension for HTTP (HPKP) on Apache Web Server</title>
+      <link>https://pwn.october.co.ke/posts/2016-08-22-public-key-pinning-extension-for-http-hpkp-on-apache-web-server/</link>
+      <pubDate>Mon, 22 Aug 2016 09:00:25 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-08-22-public-key-pinning-extension-for-http-hpkp-on-apache-web-server/</guid>
+      <description>&lt;em&gt;HPKP&lt;/em&gt; as defined in RFC7469, &lt;a href=&#34;https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning&#34;&gt;&amp;lsquo;tells a web client to associate a specific cryptographic public key with a certain web server&amp;rsquo;&lt;/a&gt;.</description>
+    </item>
+    
+    <item>
+      <title>HTTP Strict Transport Security on Apache Web Server</title>
+      <link>https://pwn.october.co.ke/posts/2016-07-11-http-strict-transport-security-on-apache-web-server/</link>
+      <pubDate>Mon, 11 Jul 2016 13:21:22 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-07-11-http-strict-transport-security-on-apache-web-server/</guid>
+      <description>In this exercise, the objective is to enforce HTTP Strict Transport Security (HSTS) on an Apache web server. This is an update to the SSL/ TLS certificate deployment as documented &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.</description>
+    </item>
+    
+    <item>
+      <title>Deploying Lightweight Directory Services using OpenLDAP</title>
+      <link>https://pwn.october.co.ke/posts/2016-07-04-deploying-lightweight-directory-services-using-openldap/</link>
+      <pubDate>Mon, 04 Jul 2016 18:00:39 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-07-04-deploying-lightweight-directory-services-using-openldap/</guid>
+      <description>In this exercise, the objective is to deploy &lt;a href=&#34;https://tools.ietf.org/html/rfc4511&#34;&gt;Lightweight Directory Access Protocol&lt;/a&gt; (LDAP) in the Samba environment initially deployed &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.</description>
+    </item>
+    
+    <item>
+      <title>Active Directory Deployment using Samba</title>
+      <link>https://pwn.october.co.ke/posts/2016-06-19-active-directory-deployment-using-samba/</link>
+      <pubDate>Sun, 19 Jun 2016 20:39:10 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-06-19-active-directory-deployment-using-samba/</guid>
+      <description>Active Directory (AD) is a Microsoft technology that provides services within a Windows domain environment.</description>
+    </item>
+    
+    <item>
+      <title>SSL/ TLS Certificate Deployment</title>
+      <link>https://pwn.october.co.ke/posts/2016-01-19-ssl-tls-certificate-deployment/</link>
+      <pubDate>Tue, 19 Jan 2016 20:44:57 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-01-19-ssl-tls-certificate-deployment/</guid>
+      <description>SSL and its successor protocol &lt;a href=&#34;#&#34;&gt;TLS&lt;/a&gt; enable secure connections over an inherently insecure Internet.</description>
+    </item>
+    
+    <item>
+      <title>LAMP Stack Deployment on CentOS</title>
+      <link>https://pwn.october.co.ke/posts/2016-01-18-lamp-stack-deployment-on-centos/</link>
+      <pubDate>Mon, 18 Jan 2016 03:28:49 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-01-18-lamp-stack-deployment-on-centos/</guid>
+      <description>The LAMP stack; for Linux, Apache, MySQL and PHP, allows a user to run dynamic websites and web applications.</description>
+    </item>
+    
+    <item>
+      <title>SELinux Deployment</title>
+      <link>https://pwn.october.co.ke/posts/2016-01-14-selinux-deployment/</link>
+      <pubDate>Thu, 14 Jan 2016 19:49:31 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-01-14-selinux-deployment/</guid>
+      <description>Security Enhanced Linux (SELinux) is an implementation of mandatory access control allowing a stricter enforcement of access policies for users and applications.</description>
+    </item>
+    
+    <item>
+      <title>Firewall Deployment on a Linux Web Server</title>
+      <link>https://pwn.october.co.ke/posts/2016-01-13-firewall-deployment-on-a-linux-web-server/</link>
+      <pubDate>Wed, 13 Jan 2016 19:06:50 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-01-13-firewall-deployment-on-a-linux-web-server/</guid>
+      <description>For the second part of our web server &lt;a href=&#34;#&#34;&gt;deployment&lt;/a&gt;, we are required to deploy a firewall.</description>
+    </item>
+    
+    <item>
+      <title>Web Server Deployment in Linux</title>
+      <link>https://pwn.october.co.ke/posts/2016-01-05-web-server-deployment-in-linux/</link>
+      <pubDate>Tue, 05 Jan 2016 13:48:37 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2016-01-05-web-server-deployment-in-linux/</guid>
+      <description>As an update to this blog, I have elected to migrate to a web server that I have full control over.</description>
+    </item>
+    
+    <item>
+      <title>SQLi to Shell - Mitigation Measures</title>
+      <link>https://pwn.october.co.ke/posts/2015-11-10-sqli-to-shell-mitigation-measures/</link>
+      <pubDate>Tue, 10 Nov 2015 12:52:03 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2015-11-10-sqli-to-shell-mitigation-measures/</guid>
+      <description>As a follow up to &lt;a href=&#34;#&#34;&gt;this&lt;/a&gt; Pentester Lab exercise, there exist possible countermeasures against such an attack.</description>
+    </item>
+    
+    <item>
+      <title>SQLi to Shell - Pentester Lab Exercise</title>
+      <link>https://pwn.october.co.ke/posts/2015-11-10-sqli-to-shell-pentester-lab-exercise/</link>
+      <pubDate>Mon, 09 Nov 2015 06:19:11 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2015-11-10-sqli-to-shell-pentester-lab-exercise/</guid>
+      <description>The &lt;a href=&#34;https://pentesterlab.com/exercises/from_sqli_to_shell/&#34;&gt;exercise&lt;/a&gt; requires us to leverage SQL injection (SQLi) to gain shell access on a vulnerable web application.</description>
+    </item>
+    
+    <item>
+      <title>Problem 3 - Project Euler</title>
+      <link>https://pwn.october.co.ke/posts/2015-10-23-problem-3-project-euler/</link>
+      <pubDate>Fri, 23 Oct 2015 19:15:56 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2015-10-23-problem-3-project-euler/</guid>
+      <description>The &lt;a href=&#34;https://projecteuler.net/problem=3&#34;&gt;problem&lt;/a&gt; requires the largest prime factor for a given numb</description>
+    </item>
+    
+    <item>
+      <title>Problem 2 - Project Euler</title>
+      <link>https://pwn.october.co.ke/posts/2015-10-22-problem-2-project-euler/</link>
+      <pubDate>Thu, 22 Oct 2015 13:15:15 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2015-10-22-problem-2-project-euler/</guid>
+      <description>The &lt;a href=&#34;https://projecteuler.net/problem=2&#34;&gt;problem&lt;/a&gt; requires the sum of all even-numbered Fibonacci numbers that are less than four million.</description>
+    </item>
+    
+    <item>
+      <title>Problem 1 - Project Euler</title>
+      <link>https://pwn.october.co.ke/posts/2015-10-22-problem-1-project-euler/</link>
+      <pubDate>Thu, 22 Oct 2015 12:54:27 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2015-10-22-problem-1-project-euler/</guid>
+      <description>The &lt;a href=&#34;https://projecteuler.net/problem=1&#34;&gt;problem&lt;/a&gt; requires us to return the sum of all natural numbers below 1000; that are divisible by both 3 and 5.</description>
+    </item>
+    
+    <item>
+      <title>Creating Bootable USB Drivers in OSX</title>
+      <link>https://pwn.october.co.ke/posts/2015-09-01-creating-bootable-usb-drivers-in-osx/</link>
+      <pubDate>Tue, 01 Sep 2015 09:54:45 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2015-09-01-creating-bootable-usb-drivers-in-osx/</guid>
+      <description>Bootable or live operating system images are a useful tool for the systems administrator.</description>
+    </item>
+    
+    <item>
+      <title>Digital Certificates and TLS/ SSL a Primer</title>
+      <link>https://pwn.october.co.ke/posts/2015-04-15-digital-certificates-and-tls-slash-ssl-a-primer/</link>
+      <pubDate>Wed, 15 Apr 2015 06:59:23 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2015-04-15-digital-certificates-and-tls-slash-ssl-a-primer/</guid>
+      <description>Digital certificates or TLS/ SSL certificates are an implementation of public key infrastructure (PKI). In simple terms digital certificates allow a trusted third party, the certificate authority, to verify the identity of the certificate owner.</description>
+    </item>
+    
+    <item>
+      <title>Blogging With Octopress</title>
+      <link>https://pwn.october.co.ke/posts/2015-03-24-blogging-with-octopress/</link>
+      <pubDate>Tue, 24 Mar 2015 07:46:17 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2015-03-24-blogging-with-octopress/</guid>
+      <description>Octopress described as a blogging framework for hackers, is an implementation of Jekyll</description>
+    </item>
+    
+    <item>
+      <title>Pragyan CTF - Lost Friends</title>
+      <link>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</guid>
+      <description>Moana and her friends were out on a sea voyage, spending their summer joyously. Unfortnately, they came across Charybdis, the sea monster. Charybdis, furious over having unknown visitors, wreaked havoc on their ship. The ship was lost.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Digital Certificates and TLS/ SSL a Primer - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Digital Certificates and TLS/ SSL a Primer</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-04-15T06:59:23&#43;03:00">April 15, 2015</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>Digital certificates or TLS/ SSL certificates are an implementation of public key infrastructure (PKI). In simple terms digital certificates allow a trusted third party, the certificate authority, to verify the identity of the certificate owner.</p>
+<p>The use of digital certificates also enables the use of HTTP over TLS (HTTPS) to mitigate against interception and tampering of data in transit. Traditional applications include payment transactions, banking applications and email.</p>
+<h3 id="threat-actors">Threat Actors</h3>
+<p>The original design of the Internet and its related protocols did not factor in security. An indirect result is that intercepted traffic over HTTP is viewable to <a href="https://www.urbandictionary.com/define.php?term=world%20%2B%20dog">world plus dog</a>.</p>
+<p>This flaw received public attention when <a href="https://codebutler.github.io/firesheep/">Firesheep</a> extension for Firefox was used to capture login credentials for social media sites over open networks.</p>
+<p>Other threats can involve service providers <a href="http://arstechnica.com/tech-policy/2013/04/how-a-banner-ad-for-hs-ok/">injecting ads</a> into web pages and more worryingly state agents <a href="https://www.schneier.com/blog/archives/2013/10/how_the_nsa_att.html">intercepting</a> <a href="http://www.nytimes.com/2015/04/11/technology/china-is-said-to-use-powerful-new-weapon-to-censor-internet.html?_r=0">and weaponising</a> the Internet.</p>
+<p>The threats listed could all be mitigated by encrypting data during transmission (HTTPS) and enforcing non-repudiation by implementing digital certificates.</p>
+<h3 id="obtaining-a-digital-certificate">Obtaining a Digital Certificate</h3>
+<p>Digital certificates are fairly easy to obtain from a certificate authority (CA). CAs might require additional information to verify ownership/ control of the domain.</p>
+<p>As per PKI a public-private key pair is generated with the private key to be installed on the web server and the public key to be shared with clients who access the site or application.</p>
+<p>An additional intermediate file may also be generated and this verifies the identity of the CA with a higher level CA. CAs operate on the basis of reputation and modern web browsers (I recommend either Mozilla Firefox or Google Chrome) will flag fraudulent CAs causing issues with operability.</p>
+<h3 id="self-signed-digital-certificates">Self-Signed Digital Certificates</h3>
+<p>For testing purposes, a user may elect to generate self-signed digital certificates. This should only be used for internal purposes since a CA, the trusted third party, cannot verify the validity of the public key.</p>
+<h3 id="lets-encrypt">Let’s Encrypt</h3>
+<p><a href="https://letsencrypt.org/">Let’s Encrypt</a>, a collaborative project under the Linux Foundation launches in mid 2015 serving as an automated and <a href="http://www.urbandictionary.com/define.php?term=Free%20as%20in%20Beer">no cost</a> CA.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Digital certificates and encryption through HTTPS should be considered a base standard for a more secure Internet. To maintain a level of confidentiality and data integrity, communication over HTTPS should be the default option.</p>
+<p>In a future post I will document how I obtained a digital certificate for this blog and the minor challenges experienced. Completing this exercise requires some free time and minimal technical skill.</p>
+<h4 id="update">Update</h4>
+<p>Let&rsquo;s Encrypt is currently in beta and has begun issuing certificates. As of December 3rd 2015 this <a href="https://letsencrypt.org/2015/11/12/public-beta-timing.html">initiative</a> will be open to the public.</p>
+<h4 id="update-2">Update 2</h4>
+<p>As of December 18th 2015 Let&rsquo;s Encrypt is live on this <a href="#">site</a>.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2015-03-24-blogging-with-octopress/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Blogging With Octopress</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2015-09-01-creating-bootable-usb-drivers-in-osx/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Creating Bootable USB Drivers in OSX</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

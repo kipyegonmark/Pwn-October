@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SQLi to Shell - Mitigation Measures - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">SQLi to Shell - Mitigation Measures</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-11-10T12:52:03&#43;03:00">November 10, 2015</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>As a follow up to <a href="#">this</a> Pentester Lab exercise, there exist possible countermeasures against such an attack.</p>
+<p>The original Pentester Lab exercise can be attempted <a href="https://pentesterlab.com/exercises/from_sqli_to_shell">here</a>.</p>
+<h3 id="disable-banners">Disable Banners</h3>
+<p>During the fingerprinting stage, a banner grab was used to capture information about the web server and operating system in use.</p>
+<p>In a Debian based environment, Apache web server can be configured to hide this information.</p>
+<p>The required configuration file exists in this location.</p>
+<p><code>/etc/apache/apache2.conf</code></p>
+<p>Alternatively, in a derivative of Red Hat Linux the configuration file exists in this location.</p>
+<p><code>/etc/httpd/conf/httpd.conf</code></p>
+<p>Using a text editor, the user can make amendments as shown.</p>
+<pre><code>ServerSignature Off
+
+ServerTokens Prod
+</code></pre><p>Restarting the Apache web server will enforce this change and counter the information leakage.</p>
+<h3 id="sql-injection">SQL Injection</h3>
+<p>SQLi could be countered through the use of sanitised user input. With the correct rules in place, SQL will reject invalid input and crucially will not run code.</p>
+<p>Parametrised queries are used to enforce sanitised user input.</p>
+<p>As an example, from the penetration test the query below was used prove SQL injection.</p>
+<p><code>SELECT * FROM users WHERE name = '' OR '1'='1';</code></p>
+<p>This threat can be countered using a parameter for user input as shown.</p>
+<p><code>SELECT * FROM users WHERE name = '@name';</code></p>
+<p>With this change, user input will now only be treated as a field parameter and not as a SQL query.</p>
+<h3 id="exploitation">Exploitation</h3>
+<p>During the exploitation phase, the attacker gained access to hashed passwords. Furthermore password cracking was made trivial due to the use of MD5 cryptographic hash function.</p>
+<p>[Salting](<a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">https://en.wikipedia.org/wiki/Salt_(cryptography)</a> the password hashes would reduce the chances of the attacker retrieving a plain text version of the stored passwords.</p>
+<p>In addition it would be beneficial to use a more suitable hash function such as SHA-256.</p>
+<h3 id="countermeasures">Countermeasures</h3>
+<ul>
+<li>Harden the web server</li>
+<li>Separation of user privileges - limit use of root/ admin accounts</li>
+<li>Disable directory listing</li>
+<li>Disable unused applications/ modules</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>The <a href="#">penetration test</a> exploited weaknesses in the configuration of a web application.</p>
+<p>Using this exercise, we can prove that several steps can be implemented to make this task more difficult for the attacker i.e. threat mitigation.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2015-11-10-sqli-to-shell-pentester-lab-exercise/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">SQLi to Shell - Pentester Lab Exercise</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2016-01-05-web-server-deployment-in-linux/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Web Server Deployment in Linux</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

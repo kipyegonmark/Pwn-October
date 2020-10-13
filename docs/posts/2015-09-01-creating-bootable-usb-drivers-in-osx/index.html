@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Creating Bootable USB Drivers in OSX - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Creating Bootable USB Drivers in OSX</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-09-01T09:54:45&#43;03:00">September 01, 2015</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>Bootable or live operating system images are a useful tool for the systems administrator. This is particularly true during deployment or maintenance of client and server computers.</p>
+<p>Mac OS X by default has the required utilities to perform this quick exercise.</p>
+<h3 id="prerequsites">Prerequsites</h3>
+<ul>
+<li>hdiutil</li>
+<li>diskutil</li>
+<li>dd</li>
+</ul>
+<p>Do note OS X requires image files be in .img or .dmg file format.</p>
+<h3 id="the-process">The Process</h3>
+<p>From terminal, <strong>hdiutil</strong> can be used to convert disk images in .iso file format.</p>
+<p>Target and destination are used here respectively to refer to the source file and the destination for the converted file.</p>
+<!-- raw HTML omitted -->
+<p><strong>diskutil</strong> is then used to unmount the target usb drive.</p>
+<p>If unsure, the target drive name and number can be retrieved using:</p>
+<p><code>$ diskutil list</code></p>
+<p>The code snippet below then unmounts the required drive.</p>
+<p><code>$ diskutil unmountDisk /dev/disk</code></p>
+<p>Finally, we copy the disk image to the usb drive using <strong>dd</strong>.</p>
+<p>Do note that this step requires sudo permission to run.</p>
+<p><code>$ sudo dd if=target of=dest bs=1m</code></p>
+<p>If bs=1m fails, then try using bs=1M</p>
+<p><code>$ sudo dd if=target of=dest bs=1M</code></p>
+<p>If this step succeeds, then we should have a bootable usb drive with our operating system image.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2015-04-15-digital-certificates-and-tls-slash-ssl-a-primer/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Digital Certificates and TLS/ SSL a Primer</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2015-10-22-problem-1-project-euler/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Problem 1 - Project Euler</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

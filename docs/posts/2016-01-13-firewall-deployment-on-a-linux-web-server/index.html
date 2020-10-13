@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Firewall Deployment on a Linux Web Server - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Firewall Deployment on a Linux Web Server</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-01-13T19:06:50&#43;03:00">January 13, 2016</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>For the second part of our web server <a href="#">deployment</a>, we are required to deploy a firewall.</p>
+<p>As our web server has a single role, this should be a quick and simple deployment.</p>
+<h3 id="introduction-to-iptables">Introduction to iptables</h3>
+<p>By default CentOS 7 comes installed with iptables/ netfilter which uses a list of user defined rules to filter traffic.</p>
+<p>Iptables provides the user interface and netfilter; a kernel module, enforces the rules.</p>
+<p>User defined rules are placed into <strong>chains</strong> that determine the action to be enforced.
+These actions are referred to as <strong>targets</strong>.</p>
+<p>The predefined chains are:</p>
+<ul>
+<li><strong>INPUT</strong> - packets destined for the host</li>
+<li><strong>OUTPUT</strong> - packets originating from the host</li>
+<li><strong>FORWARD</strong> - packets that are being routed by the host</li>
+</ul>
+<p>In addition, user defined chains can be referred to using <strong>RH-Firewall-1-INPUT</strong>.</p>
+<p>The default targets are:</p>
+<ul>
+<li><strong>ACCEPT</strong></li>
+<li><strong>DROP</strong></li>
+<li><strong>REJECT</strong></li>
+</ul>
+<p>The targets are self-descriptive in terms of their functions. REJECT and DROP differ in
+that REJECT will send a reply to the source and DROP will not send a reply.</p>
+<h3 id="deployment">Deployment</h3>
+<p>For our simple web server, the objective is to only allow SSH, HTTP and HTTPS while
+blocking all other incoming traffic.</p>
+<p>Root access is required and it is important to enable SSH before any changes are made.</p>
+<p>A sample to enable port 22 from shell is shown below:</p>
+<p><code>$ iptables -I INPUT -p tcp --dport 22 -j ACCEPT</code></p>
+<p>We are then required to explicitly block incoming traffic. To enforce this rule, the
+default INPUT policy has to be changed to <strong>Explicit Allow</strong>. From shell this can be
+enforced through the following snippet:</p>
+<p><code>$ iptables -P INPUT DROP</code></p>
+<p>Once the policy is enforced, we can now set the ports listed above to open.</p>
+<p>Depending on user requirements, traffic to DNS and ICMP ports can also be considered.</p>
+<p>It is then important to save the changes and restart the firewall service to enforce our
+new rules.</p>
+<pre><code>$ iptables save
+
+$ service iptables restart
+</code></pre><h3 id="conclusion">Conclusion</h3>
+<p>By enforcing firewall rules on our web server, we have enhanced control over our Internet
+facing VM. Additional rules can be enforced to limit or allow access to defined ip
+addresses, ports and protocols.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://wiki.centos.org/HowTos/Network/IPTables">IP tables</a></li>
+</ul>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2016-01-05-web-server-deployment-in-linux/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Web Server Deployment in Linux</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2016-01-14-selinux-deployment/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">SELinux Deployment</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
