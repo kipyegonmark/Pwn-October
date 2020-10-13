@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Web Server Deployment in Linux - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Web Server Deployment in Linux</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-01-05T13:48:37&#43;03:00">January 05, 2016</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>As an update to this blog, I have elected to migrate to a web server that I have full
+control over. This is beneficial for purposes of testing and deploying new tools; however
+at an increased administrative cost.</p>
+<p>For reasons of practicality and economics, this exercise will be implemented in the cloud.
+A locally hosted virtual machine will act as a staging area before deployment.</p>
+<p>In this exercise I intend to build a secure and robust web server. This point is important
+because this will be an Internet facing device.</p>
+<p>For the web server, a VM running a clean installation of CentOS 7 is required.</p>
+<h3 id="objectives">Objectives</h3>
+<ul>
+<li>Give user minimal privileges</li>
+<li>Minimise attack surface</li>
+<li>Configure security tools</li>
+</ul>
+<h3 id="minimise-user-account-privileges">Minimise User Account Privileges</h3>
+<p>For security it is important that users do not run as root. The intention being to reduce
+the risk of abuse either unknowingly or maliciously.</p>
+<p>To achieve this objective we shall enforce the following:</p>
+<ul>
+<li>Set a strong password for root</li>
+<li>Set password quality requirements</li>
+<li>Limit root access</li>
+</ul>
+<p>If root access is required, it is good practice to use the <strong>setuid</strong> program <strong>sudo</strong>.</p>
+<h3 id="minimise-attack-surface">Minimise Attack Surface</h3>
+<p>The <a href="https://www.sans.edu/research/security-laboratory/article/did-attack-surface">attack surface</a>
+refers to vectors that can be exploited to gain unauthorised access to a system.</p>
+<p>Unused (and obsolete) services such as telnet and print servers can be disabled.</p>
+<h3 id="configure-security-tools">Configure Security Tools</h3>
+<p>To complete this objective, we are required to implement a firewall and <a href="http://selinuxproject.org/page/Main_Page">SELinux</a>.</p>
+<p>Our CentOS 7 VM has <strong>iptables</strong> setup by default. This shall be used to implement a host based firewall on our web server.</p>
+<p>As our web server has a limited role, we can setup rules to only allow traffic on ports 80 for HTTP, 443 for HTTPS and port 22 for SSH for remote access.</p>
+<p>Security Enhanced Linux (SELinux) is intended to give greater access control to users on a
+Linux system. SELinux takes a predefined policy and enforces <em>mandatory access control</em>.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In a future post I shall go into the technical configuration used to implement the firewall and SELinux.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2015-11-10-sqli-to-shell-mitigation-measures/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">SQLi to Shell - Mitigation Measures</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2016-01-13-firewall-deployment-on-a-linux-web-server/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Firewall Deployment on a Linux Web Server</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

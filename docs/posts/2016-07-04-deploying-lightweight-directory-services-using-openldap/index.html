@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Deploying Lightweight Directory Services using OpenLDAP - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Deploying Lightweight Directory Services using OpenLDAP</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-07-04T18:00:39&#43;03:00">July 04, 2016</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>In this exercise, the objective is to deploy <a href="https://tools.ietf.org/html/rfc4511">Lightweight Directory Access Protocol</a> (LDAP) in the Samba environment initially deployed <a href="#">here</a>.</p>
+<p>To achieve this goal the <a href="http://linux.die.net/man/8/slapd">standalone LDAP daemon</a> (slapd) is to be installed and configured.</p>
+<h3 id="openldap">OpenLDAP</h3>
+<p>From the source website, <a href="http://www.openldap.org/">OpenLDAP</a> is &ldquo;an open source implementation of the Lightweight Directory Access Protocol&rdquo;.</p>
+<h3 id="installation">Installation</h3>
+<p>Before <a href="http://www.openldap.org/doc/admin24/quickstart.html">installation</a>, OpenLDAP has the following prerequisite packages:</p>
+<ul>
+<li>nss_ldap</li>
+<li>pam_ldap</li>
+<li>smbldap-tools</li>
+</ul>
+<p>OpenLDAP can be installed through a package manager or from source.</p>
+<h3 id="configuration">Configuration</h3>
+<p>After successful installation, use a text editor to modify the configuration file. By default this is located at <strong>/usr/local/etc/openldap/slapd.ldif</strong>.</p>
+<p>A sample configuration for <strong>contoso.com</strong> is as shown.</p>
+<pre><code>dn: olcDatabase=mdb,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcMdbConfig
+olcDatabase: mdb
+OlcDbMaxSize: 1073741824
+olcSuffix: dc=contoso,dc=com
+olcRootDN: cn=Administrator,dc=contoso,dc=com
+olcRootPW: secret
+olcDbDirectory: /usr/local/var/openldap-data
+olcDbIndex: objectClass eq&lt;/code&gt;&lt;/pre&gt;
+</code></pre><p>For use by slapd, the configuration file is imported by running the command shown.</p>
+<p><code>$ su root -c /usr/local/sbin/slapadd -F /usr/local/etc/cn=config -l /usr/local/etc/openldap/slapd.ldif</code></p>
+<p>If configuration is successful, slapd can be started using the following command.</p>
+<p><code>$ su root -c /usr/local/libexec/slapd -F /usr/local/etc/cn=config</code></p>
+<h3 id="notes">Notes</h3>
+<p>By default, slapd grants read access to everybody. For security reasons it is important to enable access controls as documented <a href="http://www.openldap.org/doc/admin24/security.html">here</a>.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="http://www.openldap.org/doc/admin24/">Open LDAP Software Admin Guide</a></li>
+</ul>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2016-06-19-active-directory-deployment-using-samba/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Active Directory Deployment using Samba</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2016-07-11-http-strict-transport-security-on-apache-web-server/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">HTTP Strict Transport Security on Apache Web Server</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

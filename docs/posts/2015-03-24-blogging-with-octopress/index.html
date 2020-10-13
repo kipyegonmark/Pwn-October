@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Blogging With Octopress - Pwn October: A Technology Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pwn October: A Technology Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pwn October: A Technology Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Blogging With Octopress</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-03-24T07:46:17&#43;03:00">March 24, 2015</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p><a href="http://octopress.org/">Octopress</a>; described as a blogging framework for hackers, is an implementation of Jekyll, the same implementation used by <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+<p>Composing of posts is done in Markdown and with the benefit of Git, backup and version control can be implemented.</p>
+<p>For this exercise, it is advisable that one is comfortable using a terminal/ command line</p>
+<h3 id="getting-started">Getting Started</h3>
+<p>I chose Octopress because it is simple to use and deploy. Content is composed in Markdown markup language and plugins add extra functionality to create a clean and presentable site.</p>
+<p>Octopress has quality <a href="http://octopress.org/docs/">documentation</a> and requires minimal programming knowledge to use.</p>
+<p>As a learning experience, this is an excellent way to pick up some experience of both the terminal and <a href="http://www.git-scm.com">Git</a> version control system.</p>
+<h3 id="the-challenges">The Challenges</h3>
+<p>Jekyll in GitHub pages runs in safe mode and this disables symlinked files. With this feature disabled, GitHub will return symlink error messages during attempted deployment.</p>
+<p>This is a documented <a href="https://github.com/jekyll/jekyll/pull/315">security issue</a> from using symlinks with Jekyll.</p>
+<p>At this point I elected to use a webhosting service for deployment. Octopress can deploy with rsync via SSH which is fast and can be secure thanks to public-key cryptography.</p>
+<ul>
+<li>It is a good idea to verify with your web host if they do offer SSH access.</li>
+<li><a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man1/ssh-keygen.1?query=ssh-keygen&amp;sec=1">Generate</a> strong authentication keys for SSH. The minimum recommended key length is currently 2048 bits.</li>
+<li>Keep your private keys safe!</li>
+</ul>
+<p>Additionally I will advise against using FTP because it does not encrypt traffic and is vulnerable to interception.</p>
+<p>I will attempt to use secure copy (scp) and FileZilla using secure FTP as alternative deployment methods. These options shall be discussed in a future post.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2017-03-06-pragyan-ctf-lost-friends/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Pragyan CTF - Lost Friends</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/2015-04-15-digital-certificates-and-tls-slash-ssl-a-primer/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Digital Certificates and TLS/ SSL a Primer</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Pwn October: A Technology Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
