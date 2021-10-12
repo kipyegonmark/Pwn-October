@@ -1,10 +1,12 @@
 ---
 title: "Pragyan CTF - Lost Friends"
-date: 2017-03-06 00:00:26 +03000
+date: 2017-03-06 00:00:26 +0300
 draft: false
 category: CTF
 summary: Moana and her friends were out on a sea voyage, spending their summer joyously. Unfortnately, they came across Charybdis, the sea monster. Charybdis, furious over having unknown visitors, wreaked havoc on their ship. The ship was lost.
+
 ---
+
 ### Lost Friends (300pts)
 ### Problem
 

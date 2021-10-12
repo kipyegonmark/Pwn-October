@@ -55,12 +55,12 @@ done on the existing <a href="#">web server</a>.</p>
 so the LAMP stack is purely as proof of concept.</p>
 <h3 id="installation">Installation</h3>
 <p>From shell, install and start the Apache web server as shown:</p>
-<pre><code>$ yum install httpd
+<pre tabindex="0"><code>$ yum install httpd
 
 $ service httpd start
 </code></pre><p>Accessing the web server&rsquo;s ip address from a web browser should now return a web page.</p>
 <p>From shell, install and start MySQL using the following:</p>
-<pre><code>$ yum install mysql-server
+<pre tabindex="0"><code>$ yum install mysql-server
 
 $ service mysqld start
 </code></pre><p>The next step is to install PHP using:</p>
@@ -72,11 +72,11 @@ Steps to take include:</p>
 <li>Apache should not run as root</li>
 </ul>
 <p>Create a non-privileged account to run Apache. From shell:</p>
-<pre><code>$ groupadd apache
+<pre tabindex="0"><code>$ groupadd apache
 
 $ useradd apache -g apache -d /dev/null -s /sbin/nologin
 </code></pre><p>Using a text editor, modify the Apache configuration <strong>httpd.conf</strong></p>
-<pre><code>$ User apache
+<pre tabindex="0"><code>$ User apache
 
 $ Group apache
 </code></pre><ul>
@@ -84,11 +84,11 @@ $ Group apache
 </ul>
 <p>This step intends to restrict access to the Apache directory by modifying permissions.
 From the shell:</p>
-<pre><code>$ chown -R root:root /etc/httpd
+<pre tabindex="0"><code>$ chown -R root:root /etc/httpd
 
 $ chmod -R 640 /etc/httpd
 </code></pre><p>Additionally, restrict access permissions for Apache configuration and logs.</p>
-<pre><code>$ chmod -R 640 /etc/httpd/conf
+<pre tabindex="0"><code>$ chmod -R 640 /etc/httpd/conf
 
 $ chmod -R 640 /var/log/httpd
 </code></pre><ul>
@@ -96,7 +96,7 @@ $ chmod -R 640 /var/log/httpd
 </ul>
 <p>It is important to minimise <a href="#">information leakage</a>.
 To meet this objective modify the Apache configuration <strong>httpd.conf</strong></p>
-<pre><code>ServerSignature Off
+<pre tabindex="0"><code>ServerSignature Off
 
 ServerTokens ProductOnly
 
@@ -141,7 +141,7 @@ configuration changes can be made from terminal by running the following:</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Pwn October: A Technology Blog.
+			&copy; 2021 Pwn October: A Technology Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

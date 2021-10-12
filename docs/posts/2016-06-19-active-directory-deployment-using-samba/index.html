@@ -74,7 +74,7 @@ Samba4 requires <a href="http://www.h5l.org/">Heimdal Kerberos</a> implementatio
 <p>From terminal, we execute the following.</p>
 <p><code>$ samba-tool domain provision --use-rfc2307 --interactive</code></p>
 <p>A sample configuration is as shown.</p>
-<pre><code>Realm: CONTOSO.COM
+<pre tabindex="0"><code>Realm: CONTOSO.COM
 Domain: CONTOSO
 Server Role: dc
 DNS backend: SAMBA_INTERNAL
@@ -86,7 +86,7 @@ Administrator password: P3ssw0rd_
 <h3 id="kerberos">Kerberos</h3>
 <p>The Kerberos protocol enables secure network authentication of clients and servers. A working configuration of Kerberos is created during the provisioning phase.</p>
 <p>To verify that Kerberos is working, the <strong>kinit</strong> utility can be used to obtain a ticket.</p>
-<pre><code>$ kinit administrator@CONTOSO.COM
+<pre tabindex="0"><code>$ kinit administrator@CONTOSO.COM
 $ Password for administrator@CONTOSO.COM: P3ssw0rd_
 </code></pre><ul>
 <li>The realm must always be specified in uppercase!</li>
@@ -135,7 +135,7 @@ $ Password for administrator@CONTOSO.COM: P3ssw0rd_
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Pwn October: A Technology Blog.
+			&copy; 2021 Pwn October: A Technology Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

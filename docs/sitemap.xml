@@ -1,392 +1,237 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://pwn.october.co.ke/about_me/</loc>
     <lastmod>2020-10-08T10:36:30+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-rolereversal-steganography/</loc>
     <lastmod>2017-09-25T03:58:20+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/</loc>
     <lastmod>2017-09-25T03:58:20+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/</loc>
     <lastmod>2017-09-25T03:58:20+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-simplyblack-steganography/</loc>
     <lastmod>2017-09-25T03:57:58+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-digging-deeper-steganography/</loc>
     <lastmod>2017-09-25T03:57:05+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-09-17-stem-ctf-cyber-challenge-2017-trust-issues-web-50-points/</loc>
     <lastmod>2017-09-17T10:37:54+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-25-hitb-ctf-simple-transfer-misc/</loc>
     <lastmod>2017-08-25T10:56:28+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-substitute-teacher-cryptography/</loc>
     <lastmod>2017-08-08T11:18:15+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-rotation-cryptography/</loc>
     <lastmod>2017-08-08T11:12:01+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-transposition-cryptography/</loc>
     <lastmod>2017-08-08T11:06:59+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-location-web/</loc>
     <lastmod>2017-08-08T11:04:07+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-deleted-file-forensics/</loc>
     <lastmod>2017-08-08T10:57:59+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-captured-mail-pcap/</loc>
     <lastmod>2017-08-08T10:55:03+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-hidden-message-binary/</loc>
     <lastmod>2017-08-08T10:50:31+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-weird-website-pcap/</loc>
     <lastmod>2017-08-08T10:45:31+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-zipfile-two-misc/</loc>
     <lastmod>2017-08-08T10:39:16+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-zipfile-one-misc/</loc>
     <lastmod>2017-08-08T10:31:56+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-broken-image-web/</loc>
     <lastmod>2017-08-08T10:29:08+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-old-school-web/</loc>
     <lastmod>2017-08-08T10:15:45+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-wanna-buy-a-flag-pcap/</loc>
     <lastmod>2017-08-08T10:12:44+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-find-the-flag-binary/</loc>
     <lastmod>2017-08-08T10:05:45+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-all-about-the-base-crypto/</loc>
     <lastmod>2017-08-08T09:43:16+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-08-sha2017-junior-ctf-in-your-head-web/</loc>
     <lastmod>2017-08-08T09:43:16+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-web-5-nothing-here/</loc>
     <lastmod>2017-08-01T10:11:04+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-crypto-45-scy-way/</loc>
     <lastmod>2017-08-01T10:10:51+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-08-01-bugs-bunny-ctf-crypto-15/</loc>
     <lastmod>2017-08-01T10:10:37+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-web001-web/</loc>
     <lastmod>2017-05-08T13:23:10+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-for002-forensics/</loc>
     <lastmod>2017-05-08T13:16:56+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-for001-forensics/</loc>
     <lastmod>2017-05-08T13:11:40+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-crypto002-cryptography/</loc>
     <lastmod>2017-05-08T13:05:22+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-05-08-whitehat-challenge-03-crypto001-cryptography/</loc>
     <lastmod>2017-05-08T12:46:43+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-lectures-forensic/</loc>
     <lastmod>2017-04-25T08:59:31+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-file-forensic/</loc>
     <lastmod>2017-04-25T08:52:19+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-star-blushes-star-steganography/</loc>
     <lastmod>2017-04-25T08:48:44+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-mobile-number-osint/</loc>
     <lastmod>2017-04-25T08:41:37+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-location-osint/</loc>
     <lastmod>2017-04-25T08:32:55+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-social-media-osint/</loc>
     <lastmod>2017-04-25T08:28:56+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-great-leader-misc/</loc>
     <lastmod>2017-04-25T08:22:36+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-strings-misc/</loc>
     <lastmod>2017-04-25T08:18:24+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-rome-warmup/</loc>
     <lastmod>2017-04-25T08:13:01+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-a-fine-cipher-warmup/</loc>
     <lastmod>2017-04-25T08:07:41+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-bash-warmup/</loc>
     <lastmod>2017-04-25T08:00:10+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-25-yubitsec-ctf-gifted-re/</loc>
     <lastmod>2017-04-25T07:33:38+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-10-inshack-easy-html-web-25/</loc>
     <lastmod>2017-04-10T07:39:40+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-10-sunshine-ctf-easy-2/</loc>
     <lastmod>2017-04-10T07:34:38+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-04-10-sunshine-ctf-easy-1/</loc>
     <lastmod>2017-04-10T07:29:25+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-interstellar/</loc>
     <lastmod>2017-03-06T00:10:26+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-look-harder/</loc>
     <lastmod>2017-03-06T00:00:26+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://pwn.october.co.ke/2017-03-06-pragyan-ctf-lost-friends/</loc>
+    <lastmod>2017-03-06T00:00:26+03:00</lastmod>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easy/</loc>
     <lastmod>2017-02-14T18:23:25+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easyauth/</loc>
     <lastmod>2017-02-14T18:13:17+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easycap/</loc>
     <lastmod>2017-02-14T18:04:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-zumbo-1/</loc>
     <lastmod>2017-02-14T17:53:26+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-sc2-cutie-cat/</loc>
     <lastmod>2017-02-06T13:26:21+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-re1-gifted/</loc>
     <lastmod>2017-02-06T13:21:40+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2017-02-06-alex-ctf-trivia-challenges/</loc>
     <lastmod>2017-02-06T12:55:50+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-12-19-7th-sharif-university-capture-the-flag-web-1/</loc>
     <lastmod>2016-12-19T10:06:38+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-09-13-asis-ctf-finals-2016-ctf-101/</loc>
     <lastmod>2016-09-13T11:43:54+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-08-22-public-key-pinning-extension-for-http-hpkp-on-apache-web-server/</loc>
     <lastmod>2016-08-22T09:00:25+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-07-11-http-strict-transport-security-on-apache-web-server/</loc>
     <lastmod>2016-07-11T13:21:22+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-07-04-deploying-lightweight-directory-services-using-openldap/</loc>
     <lastmod>2016-07-04T18:00:39+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-06-19-active-directory-deployment-using-samba/</loc>
     <lastmod>2016-06-19T20:39:10+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-01-19-ssl-tls-certificate-deployment/</loc>
     <lastmod>2016-01-19T20:44:57+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-01-18-lamp-stack-deployment-on-centos/</loc>
     <lastmod>2016-01-18T03:28:49+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-01-14-selinux-deployment/</loc>
     <lastmod>2016-01-14T19:49:31+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-01-13-firewall-deployment-on-a-linux-web-server/</loc>
     <lastmod>2016-01-13T19:06:50+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2016-01-05-web-server-deployment-in-linux/</loc>
     <lastmod>2016-01-05T13:48:37+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2015-11-10-sqli-to-shell-mitigation-measures/</loc>
     <lastmod>2015-11-10T12:52:03+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2015-11-10-sqli-to-shell-pentester-lab-exercise/</loc>
     <lastmod>2015-11-09T06:19:11+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2015-10-23-problem-3-project-euler/</loc>
     <lastmod>2015-10-23T19:15:56+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2015-10-22-problem-2-project-euler/</loc>
     <lastmod>2015-10-22T13:15:15+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2015-10-22-problem-1-project-euler/</loc>
     <lastmod>2015-10-22T12:54:27+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2015-09-01-creating-bootable-usb-drivers-in-osx/</loc>
     <lastmod>2015-09-01T09:54:45+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2015-04-15-digital-certificates-and-tls-slash-ssl-a-primer/</loc>
     <lastmod>2015-04-15T06:59:23+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/posts/2015-03-24-blogging-with-octopress/</loc>
     <lastmod>2015-03-24T07:46:17+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pwn.october.co.ke/tags/</loc>
   </url>
-  
 </urlset>

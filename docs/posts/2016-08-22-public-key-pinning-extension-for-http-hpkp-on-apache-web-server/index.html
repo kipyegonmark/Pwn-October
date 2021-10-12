@@ -68,7 +68,7 @@
 <p>For the root keys, I selected (Identrust) DST Root CA X3 root certificate and the newer ISRG Root X1 by Let&rsquo;s Encrypt and for the intermediate certificate I chose Let&rsquo;s Encrypt Authority X3.</p>
 <p>DST Root CA X3 root certificate is sourced from <a href="https://www.identrust.com/certificates/trustid/install-nes36.html">here</a> and the Let&rsquo;s Encrypt certificate keys are available <a href="https://letsencrypt.org/certificates/">here</a>.</p>
 <p>Using the retrieved information, the next step is to generate the base64 encoded hashes as shown below:</p>
-<pre><code>$ openssl x509 -in certificate.pem -pubkey -noout | openssl pkey -pubin 
+<pre tabindex="0"><code>$ openssl x509 -in certificate.pem -pubkey -noout | openssl pkey -pubin 
 -outform der | openssl dgst -sha256 -binary | openssl enc -base64
 
 $ curl https://letsencrypt.org/certs/isrgrootx1.pem | openssl x509 -pubkey | openssl pkey 
@@ -80,7 +80,7 @@ base64
 </code></pre><p>The two offline keys are generated and stored offline as backup keys in the event the Let&rsquo;s Encrypt CA becomes unavailable.</p>
 <p>Generation of the private key and the required base64 hash is shown below.</p>
 <p>Replace foo.com with a name of your choice.</p>
-<pre><code>$ openssl req -nodes -sha256 -newkey rsa:4096 -keyout 'foo.com.rsa.key' -out 'foo.com.rsa.csr'
+<pre tabindex="0"><code>$ openssl req -nodes -sha256 -newkey rsa:4096 -keyout 'foo.com.rsa.key' -out 'foo.com.rsa.csr'
 
 $ openssl req -pubkey &lt; foo.com.csr | openssl pkey -pubin -outform der | openssl dgst 
 -sha256 -binary | base64
@@ -95,7 +95,7 @@ $ openssl req -pubkey &lt; foo.com.csr | openssl pkey -pubin -outform der | open
 <p>This is an optional directive through which pin validation failures are to be reported. The value should obviously be to a different domain.</p>
 <p>A real time reporting tool is included with report-uri.io for reporting pin validation errors.</p>
 <p>Using the directives described above, the result is should be similar to the snippet below.</p>
-<pre><code>Header set Public-Key-Pins 
+<pre tabindex="0"><code>Header set Public-Key-Pins 
 &quot;pin-sha256=\&quot;Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=&quot;; 
 pin-sha256=\&quot;YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\&quot;; 
 pin-sha256=\&quot;47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\&quot;; 
@@ -154,7 +154,7 @@ includeSubdomains;&quot;
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 Pwn October: A Technology Blog.
+			&copy; 2021 Pwn October: A Technology Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

@@ -432,6 +432,15 @@ I have previous experience in software development and systems administration. I
     </item>
     
     <item>
+      <title>Pragyan CTF - Lost Friends</title>
+      <link>https://pwn.october.co.ke/2017-03-06-pragyan-ctf-lost-friends/</link>
+      <pubDate>Mon, 06 Mar 2017 00:00:26 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/2017-03-06-pragyan-ctf-lost-friends/</guid>
+      <description>Moana and her friends were out on a sea voyage, spending their summer joyously. Unfortnately, they came across Charybdis, the sea monster. Charybdis, furious over having unknown visitors, wreaked havoc on their ship. The ship was lost.</description>
+    </item>
+    
+    <item>
       <title>BSIDESSF CTF: Easy</title>
       <link>https://pwn.october.co.ke/posts/2017-02-14-bsidessf-ctf-easy/</link>
       <pubDate>Tue, 14 Feb 2017 18:23:25 +0300</pubDate>
@@ -663,15 +672,6 @@ I have previous experience in software development and systems administration. I
       
       <guid>https://pwn.october.co.ke/posts/2015-03-24-blogging-with-octopress/</guid>
       <description>Octopress described as a blogging framework for hackers, is an implementation of Jekyll</description>
-    </item>
-    
-    <item>
-      <title>Pragyan CTF - Lost Friends</title>
-      <link>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</guid>
-      <description>Moana and her friends were out on a sea voyage, spending their summer joyously. Unfortnately, they came across Charybdis, the sea monster. Charybdis, furious over having unknown visitors, wreaked havoc on their ship. The ship was lost.</description>
     </item>
     
   </channel>
