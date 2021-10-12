@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ASIS CTF Finals 2016 - CTF 101 - Pwn October: A Technology Blog</title>
+	<title>Pragyan CTF - Lost Friends - Pwn October: A Technology Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,18 +40,30 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">ASIS CTF Finals 2016 - CTF 101</h1>
+			<h1 class="post__title">Pragyan CTF - Lost Friends</h1>
 			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Mark Koskei</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-09-13T11:43:54&#43;03:00">September 13, 2016</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-03-06T00:00:26&#43;03:00">March 06, 2017</time></div></div>
 		</header><div class="content post__content clearfix">
-			<h3 id="description">Description</h3>
-<p>&lsquo;Watch your heads!&rsquo;</p>
+			<h3 id="lost-friends-300pts">Lost Friends (300pts)</h3>
+<h3 id="problem">Problem</h3>
+<p>Moana and her friends were out on a sea voyage, spending their summer joyously.
+Unfortnately, they came across Charybdis, the sea monster. Charybdis, furious over having
+unknown visitors, wreaked havoc on their ship. The ship was lost.</p>
+<p>Luckily, Moana survived, and she was swept to a nearby island. But, since then, she has not seen her
+friends. Moana has come to you for help. She believes that her friends are still alive, and that you are the
+only one who can help her find them.</p>
 <h3 id="solution">Solution</h3>
-<p>Using web developer tools in Firefox, inspect the response headers from the web page.</p>
-<p>From the header labelled _<em>Flag</em>, decode the base64 string to hex and result!</p>
+<p>Opening the image file <a href="#"><em>lost_friends.png</em></a> gives a blank white image.</p>
+<p>Using StegSolve, the file format analysis tool gives us a string that could be a hint.</p>
+<p><strong>&lsquo;Psssst, Director, maybe ?? .'</strong></p>
+<p>Splitting the image using Full Red, Full Blue and Full Green reveals the title characters from <em>Alvin and the Chipmunks</em>.</p>
+<p>With the aid of googlefu and the problem statement; the solution turned out to be Mike Mitchell, director of the 2011 film <em>Alvin and the Chipmunks: Chipwrecked</em>.</p>
+<p>FLAG: <strong>pragyanctf{mikemitchell}</strong></p>
+<h4 id="note">Note</h4>
+<p>The format for the flags in this CTF was vague and I had to rely on solutions from <a href="https://github.com/ctfs/write-ups-2016/tree/master/pragyan-ctf-2016">Pragyan CTF 2016</a>.</p>
 
 		</div>
 	</article>
@@ -64,16 +76,10 @@
 </div>
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/posts/2016-08-22-public-key-pinning-extension-for-http-hpkp-on-apache-web-server/" rel="prev">
-			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Public Key Pinning Extension for HTTP (HPKP) on Apache Web Server</p>
-		</a>
-	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/posts/2016-12-19-7th-sharif-university-capture-the-flag-web-1/" rel="next">
+		<a class="pager__link" href="/about_me/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">7th Sharif University Capture The Flag - Web 1</p>
+			<p class="pager__title">About me</p>
 		</a>
 	</div>
 </nav>

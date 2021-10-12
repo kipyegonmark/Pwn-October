@@ -655,14 +655,5 @@
       <description>Octopress described as a blogging framework for hackers, is an implementation of Jekyll</description>
     </item>
     
-    <item>
-      <title>Pragyan CTF - Lost Friends</title>
-      <link>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</guid>
-      <description>Moana and her friends were out on a sea voyage, spending their summer joyously. Unfortnately, they came across Charybdis, the sea monster. Charybdis, furious over having unknown visitors, wreaked havoc on their ship. The ship was lost.</description>
-    </item>
-    
   </channel>
 </rss>
