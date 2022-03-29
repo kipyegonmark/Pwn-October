@@ -433,10 +433,10 @@ I have previous experience in software development and systems administration. I
     
     <item>
       <title>Pragyan CTF - Lost Friends</title>
-      <link>https://pwn.october.co.ke/2017-03-06-pragyan-ctf-lost-friends/</link>
+      <link>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</link>
       <pubDate>Mon, 06 Mar 2017 00:00:26 +0300</pubDate>
       
-      <guid>https://pwn.october.co.ke/2017-03-06-pragyan-ctf-lost-friends/</guid>
+      <guid>https://pwn.october.co.ke/posts/2017-03-06-pragyan-ctf-lost-friends/</guid>
       <description>Moana and her friends were out on a sea voyage, spending their summer joyously. Unfortnately, they came across Charybdis, the sea monster. Charybdis, furious over having unknown visitors, wreaked havoc on their ship. The ship was lost.</description>
     </item>
     
@@ -527,7 +527,7 @@ I have previous experience in software development and systems administration. I
       <pubDate>Mon, 22 Aug 2016 09:00:25 +0300</pubDate>
       
       <guid>https://pwn.october.co.ke/posts/2016-08-22-public-key-pinning-extension-for-http-hpkp-on-apache-web-server/</guid>
-      <description>&lt;em&gt;HPKP&lt;/em&gt; as defined in RFC7469, &lt;a href=&#34;https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning&#34;&gt;&amp;lsquo;tells a web client to associate a specific cryptographic public key with a certain web server&amp;rsquo;&lt;/a&gt;.</description>
+      <description>&lt;em&gt;HPKP&lt;/em&gt; as defined in RFC7469, &lt;a href=&#34;https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning&#34;&gt;&amp;rsquo;tells a web client to associate a specific cryptographic public key with a certain web server&amp;rsquo;&lt;/a&gt;.</description>
     </item>
     
     <item>

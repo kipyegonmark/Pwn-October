@@ -7,7 +7,7 @@ publishDir = "docs"
 
 [Author]
     name = "Mark Koskei"
-    
+
 [Params]
     description = "A blog on technology, information security and Pwn October CTF team."
     authorbox = true
@@ -32,5 +32,6 @@ publishDir = "docs"
 [Params.widgets.social]
   # Enable parts of social widget
   twitter = "kapkole"
-  telegram = "LeonPwnski"
+  telegram = "Mark_K035"
   github = "kipyegonmark"
+  gitlab = "kipyegonmark"
