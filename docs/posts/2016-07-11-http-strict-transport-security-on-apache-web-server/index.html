@@ -60,7 +60,7 @@ Failure to meet this requirement could break access to the website for an extend
 <h3 id="deployment">Deployment</h3>
 <p>In the SSL/ TLS configuration file, the following segment should be amended. In Apache, this is located by default at <strong>/etc/httpd/conf.d/ssl.conf</strong>.</p>
 <pre tabindex="0"><code># HSTS (mod_headers is required) (15768000 seconds = 6 months)
-Header always set Strict-Transport-Security &quot;max-age=15768000&quot;
+Header always set Strict-Transport-Security &#34;max-age=15768000&#34;
 </code></pre><p>After restarting Apache, the website should be ready for submission to the Chrome <a href="https://hstspreload.appspot.com/">HSTS preload list</a>. This list is supported by most <a href="http://caniuse.com/#feat=stricttransportsecurity">major browsers</a>.</p>
 <p>At the time of posting, this <a href="#">site</a> contains no errors and is pending submission to the list.</p>
 <h4 id="update">Update</h4>
@@ -104,7 +104,7 @@ Header always set Strict-Transport-Security &quot;max-age=15768000&quot;
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2021 Pwn October: A Technology Blog.
+			&copy; 2022 Pwn October: A Technology Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
