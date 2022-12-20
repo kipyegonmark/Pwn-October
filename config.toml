@@ -31,7 +31,6 @@ publishDir = "docs"
 
 [Params.widgets.social]
   # Enable parts of social widget
-  twitter = "kapkole"
-  telegram = "Mark_K035"
   github = "kipyegonmark"
   gitlab = "kipyegonmark"
+  email = "pwn@october.co.ke"
