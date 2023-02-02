@@ -48,7 +48,7 @@
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-08-22T09:00:25&#43;03:00">August 22, 2016</time></div></div>
 		</header><div class="content post__content clearfix">
 			<p><strong>HPKP support has been dropped by all major browsers. The feature was complex to implement and had the potential to break website access.</strong></p>
-<p><em>HPKP</em> as defined in RFC7469, <a href="https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning">&rsquo;tells a web client to associate a specific cryptographic public key with a certain web server&rsquo;</a>.</p>
+<p><em>HPKP</em> as defined in RFC7469, <a href="https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning">&lsquo;tells a web client to associate a specific cryptographic public key with a certain web server&rsquo;</a>.</p>
 <p>Used in combination with <a href="#">HTTP Strict Transport Security</a>, HPKP can be a strong defense against man in the middle (MITM) attacks by enforcing certificate chain validation.</p>
 <p>In this event, the threat agent is a rogue or a compromised certificate authority such as Diginotar&rsquo;s <a href="https://blog.mozilla.org/security/2011/08/29/fraudulent-google-com-certificate/">fraudulent issuance of google.com certificates</a>.</p>
 <h3 id="weaknesses">Weaknesses</h3>
@@ -80,7 +80,7 @@ base64
 </code></pre><p>The two offline keys are generated and stored offline as backup keys in the event the Let&rsquo;s Encrypt CA becomes unavailable.</p>
 <p>Generation of the private key and the required base64 hash is shown below.</p>
 <p>Replace foo.com with a name of your choice.</p>
-<pre tabindex="0"><code>$ openssl req -nodes -sha256 -newkey rsa:4096 -keyout &#39;foo.com.rsa.key&#39; -out &#39;foo.com.rsa.csr&#39;
+<pre tabindex="0"><code>$ openssl req -nodes -sha256 -newkey rsa:4096 -keyout 'foo.com.rsa.key' -out 'foo.com.rsa.csr'
 
 $ openssl req -pubkey &lt; foo.com.csr | openssl pkey -pubin -outform der | openssl dgst 
 -sha256 -binary | base64
@@ -96,14 +96,14 @@ $ openssl req -pubkey &lt; foo.com.csr | openssl pkey -pubin -outform der | open
 <p>A real time reporting tool is included with report-uri.io for reporting pin validation errors.</p>
 <p>Using the directives described above, the result is should be similar to the snippet below.</p>
 <pre tabindex="0"><code>Header set Public-Key-Pins 
-&#34;pin-sha256=\&#34;Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=&#34;; 
-pin-sha256=\&#34;YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\&#34;; 
-pin-sha256=\&#34;47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\&#34;; 
-pin-sha256=\&#34;BnCc92LNTmq+v0mGoN13pbuR/d8WcOBYtZCCMBKwrmo=\&#34;; 
-pin-sha256=\&#34;MBCWEpJFZIJKp3Tjy4WTIL2AcL91yV4Zo2PfsHyiaVQ=\&#34;; 
-report-uri=\&#34;https://55343e1861289e8df8aa157da3c58796.report-uri.io/r/default/hpkp/enforce\&#34;; 
+&quot;pin-sha256=\&quot;Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=&quot;; 
+pin-sha256=\&quot;YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\&quot;; 
+pin-sha256=\&quot;47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\&quot;; 
+pin-sha256=\&quot;BnCc92LNTmq+v0mGoN13pbuR/d8WcOBYtZCCMBKwrmo=\&quot;; 
+pin-sha256=\&quot;MBCWEpJFZIJKp3Tjy4WTIL2AcL91yV4Zo2PfsHyiaVQ=\&quot;; 
+report-uri=\&quot;https://55343e1861289e8df8aa157da3c58796.report-uri.io/r/default/hpkp/enforce\&quot;; 
 max-age=5184000; 
-includeSubdomains;&#34;
+includeSubdomains;&quot;
 </code></pre><p>In Apache, the snippet is to be added to virtual hosts located by default in <strong>/etc/httpd/conf.d/ssl.conf</strong>. Restarting the web server should now enforce public key pinning.</p>
 <h3 id="testing">Testing</h3>
 <p>Using Firefox, one can verify that HPKP is enabled using the network tool bundled with &lsquo;Web developer&rsquo; Tools.</p>
