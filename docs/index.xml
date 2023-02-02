@@ -527,7 +527,7 @@ I have previous experience in software development and systems administration. I
       <pubDate>Mon, 22 Aug 2016 09:00:25 +0300</pubDate>
       
       <guid>https://pwn.october.co.ke/posts/2016-08-22-public-key-pinning-extension-for-http-hpkp-on-apache-web-server/</guid>
-      <description>&lt;em&gt;HPKP&lt;/em&gt; as defined in RFC7469, &lt;a href=&#34;https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning&#34;&gt;&amp;lsquo;tells a web client to associate a specific cryptographic public key with a certain web server&amp;rsquo;&lt;/a&gt;.</description>
+      <description>&lt;em&gt;HPKP&lt;/em&gt; as defined in RFC7469, &lt;a href=&#34;https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning&#34;&gt;&amp;rsquo;tells a web client to associate a specific cryptographic public key with a certain web server&amp;rsquo;&lt;/a&gt;.</description>
     </item>
     
     <item>
