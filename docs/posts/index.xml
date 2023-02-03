@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Pwn October: A blog on Coding, Devops, Information Security and CTFs.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Sep 2017 03:58:20 +0300</lastBuildDate><atom:link href="https://pwn.october.co.ke/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2023 16:09:24 +0300</lastBuildDate><atom:link href="https://pwn.october.co.ke/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why blog?</title>
+      <link>https://pwn.october.co.ke/posts/2023-02-01-why-do-people-blog/</link>
+      <pubDate>Wed, 01 Feb 2023 16:09:24 +0300</pubDate>
+      
+      <guid>https://pwn.october.co.ke/posts/2023-02-01-why-do-people-blog/</guid>
+      <description>I saw this asked on a forum I visit. And I thought it was an interesting question.</description>
+    </item>
+    
     <item>
       <title>Codefest CTF 2017 - RoleReversal - Steganography</title>
       <link>https://pwn.october.co.ke/posts/2017-09-25-codefest-ctf-2017-rolereversal-steganography/</link>
@@ -517,7 +526,7 @@
       <pubDate>Mon, 22 Aug 2016 09:00:25 +0300</pubDate>
       
       <guid>https://pwn.october.co.ke/posts/2016-08-22-public-key-pinning-extension-for-http-hpkp-on-apache-web-server/</guid>
-      <description>&lt;em&gt;HPKP&lt;/em&gt; as defined in RFC7469, &lt;a href=&#34;https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning&#34;&gt;&amp;rsquo;tells a web client to associate a specific cryptographic public key with a certain web server&amp;rsquo;&lt;/a&gt;.</description>
+      <description>&lt;em&gt;HPKP&lt;/em&gt; as defined in RFC7469, &lt;a href=&#34;https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning&#34;&gt;&amp;lsquo;tells a web client to associate a specific cryptographic public key with a certain web server&amp;rsquo;&lt;/a&gt;.</description>
     </item>
     
     <item>
